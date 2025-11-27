@@ -52,11 +52,42 @@ Model Waveform
 <img width="706" height="167" alt="image" src="https://github.com/user-attachments/assets/bff0d8fd-d679-444e-af37-0b34585853c1" />
 
 Program
-
+```
+Ac=10.3; 
+fc=2030; 
+Am=4.3; 
+fm=330; 
+fs=25000; 
+t=0:1/fs:2/fm; 
+Wm=2*3.14*fm; 
+Wc=2*3.14*fc; 
+Em=Am*sin(2*3.14*fm*t); 
+subplot(2,2,1); 
+title('Message'); 
+plot(t,Em); 
+Ec=Ac*sin(2*3.14*fc*t); 
+subplot(2,2,2); 
+title('Carrier'); 
+plot(t,Ec); 
+Edsbsc1=((Am/2)*cos((Wc-Wm)*t))-((Am/2)*cos((Wc+Wm)*t)); 
+Edsbsc2=((Am/2)*cos((Wc-Wm)*t))+((Am/2)*cos((Wc+Wm)*t)); 
+Elsb=Edsbsc1+Edsbsc2; 
+subplot(2,2,3); 
+title('Lsb'); 
+plot(t,Elsb); 
+Eusb=Edsbsc2-Edsbsc1; 
+subplot(2,2,4); 
+title('Usb'); 
+plot(t,Eusb);
+```
 OUTPUT WAVEFORM
+
+<img width="1785" height="855" alt="image" src="https://github.com/user-attachments/assets/cace67ab-a221-4647-9716-a908d86220d2" />
+
 
 TABULATION
 
+<img width="1600" height="1385" alt="image" src="https://github.com/user-attachments/assets/14f8f49c-30ae-4618-ab69-6ae943fffcf2" />
 
 
 
