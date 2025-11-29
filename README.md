@@ -1,4 +1,5 @@
 # SSB
+upendra
 
 EXP NO: 3	SSB-SC-AM MODULATION using SCILAB
 
